@@ -1,0 +1,15 @@
+<mat-card>
+  <mat-card-content>
+    <mat-toolbar-row>
+      <button mat-button color="primary" [routerLink]="['/']">Home</button>
+      <button mat-button color="primary" [routerLink]="['/newLocation']">
+        NewLocation
+      </button>
+
+      <!-- <span style="flex: 1 1 auto"></span> -->
+      <!-- <button  mat-button *ngIf="!auth.isauthenticated" [routerLink]="['/register']" >register</button>
+        <button  mat-button *ngIf="!auth.isauthenticated" [routerLink]="['/login']" >login</button>
+        <button  mat-button *ngIf="auth.isauthenticated" (click)="auth.logout()" >logout</button> -->
+    </mat-toolbar-row>
+  </mat-card-content>
+</mat-card>

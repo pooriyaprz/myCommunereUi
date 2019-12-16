@@ -1,0 +1,12 @@
+.example-card {
+  max-width: 400px;
+}
+.my-mat-card {
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.example-full-width {
+  width: 100%;
+}

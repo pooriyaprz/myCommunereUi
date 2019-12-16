@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row mt-4 justify-content-center">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <strong>
+          Share Location
+        </strong>
+      </mat-card-header>
+      <mat-card-content>
+        <form [formGroup]="shareLocation" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <mat-form-field class="example-full-width">
+              <label>Location Name:</label>
+              <input matInput formControlName="LocationName" />
+            </mat-form-field>
+          </div>
+
+          <div class="form-group">
+            <label>Location On Map:</label>
+            <div
+              class="map "
+              leaflet
+              style="height:220px ;"
+              (leafletMapReady)="onMapReady($event)"
+              [leafletLayers]="layers"
+              [leafletOptions]="options"
+              [leafletLayersControl]="layersControl"
+            ></div>
+          </div>
+          <div class="form-group">
+            <label>Location Type:</label>
+            <mat-form-field class=" example-full-width">
+              <mat-label>Choose On.....</mat-label>
+              <mat-select formControlName="LocationType">
+                <mat-option [value]="0">Bubusines </mat-option>
+                <mat-option [value]="1">Sport </mat-option>
+                <mat-option [value]="2">Social </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <label>Logo:</label>
+            <app-file-uploader formControlName="Image"> </app-file-uploader>
+          </div>
+          <div class="form-group mt-2">
+            <div class="example-button-row">
+              <button [disabled]="!shareLocation.valid" mat-raised-button type="submit" color="primary" *ngIf="locationId==0">
+                Save
+              </button>
+              <button [disabled]="!shareLocation.valid" mat-raised-button type="submit" color="primary" *ngIf="locationId>0">
+                  Edit
+                </button>
+              <button mat-raised-button type="reset" class="ml-1" color="warn">
+                Cancle
+              </button>
+            </div>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
